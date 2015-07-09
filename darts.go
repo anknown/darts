@@ -98,6 +98,10 @@ func (dat *DoubleArrayTrie) PrintTrie() {
 }
 
 func (d *Darts) Build(keywords [][]rune) (*DoubleArrayTrie, *LinkedListTrie, error) {
+	if len(keywords) == 0 {
+		return nil, nil, fmt.Errorf("empty keywords")
+	}
+
 	d.dat = new(DoubleArrayTrie)
 	d.resize(RESIZE_DELTA)
 
