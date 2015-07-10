@@ -77,7 +77,6 @@ func (llt *LinkedListTrie) printTrie(n *LinkedListTrieNode) {
 	for i := 0; i < n.Depth; i++ {
 		fmt.Printf("\t")
 	}
-	//fmt.Printf("[code:%s][index:%d][base:%d]\n", string(n.Code-1), n.Index, n.Base)
 	for _, c := range n.Children {
 		llt.printTrie(c)
 	}

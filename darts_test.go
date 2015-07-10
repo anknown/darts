@@ -35,11 +35,22 @@ func TestBuild(t *testing.T) {
 	dict, err := Read("test_keywords_eng")
 	if err != nil {
 		t.Error(err)
+		return
 	}
 
 	_, _, err = d.Build(dict)
 	if err != nil {
 		t.Error(err)
+		return
+	}
+}
+
+func TestBuildWithNothing(t *testing.T) {
+	d := new(Darts)
+	_, _, err := d.Build(nil)
+	if err == nil {
+		t.Error("test build without nothing failed")
+		return
 	}
 }
 
@@ -48,11 +59,13 @@ func TestSearchEnglish(t *testing.T) {
 	dict, err := Read("test_keywords_eng")
 	if err != nil {
 		t.Error(err)
+		return
 	}
 
 	dat, _, err := d.Build(dict)
 	if err != nil {
 		t.Error(err)
+		return
 	}
 
 	//dat.PrintTrie()
@@ -72,11 +85,13 @@ func TestSearchChinese(t *testing.T) {
 	dict, err := Read("test_keywords_chn")
 	if err != nil {
 		t.Error(err)
+		return
 	}
 
 	dat, _, err := d.Build(dict)
 	if err != nil {
 		t.Error(err)
+		return
 	}
 
 	//dat.PrintTrie()
