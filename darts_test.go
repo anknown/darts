@@ -74,6 +74,7 @@ func TestSearchEnglish(t *testing.T) {
 	for _, d := range dict {
 		if !dat.ExactMatchSearch(d, 0) {
 			t.Errorf("%s not found", string(d))
+			return
 		}
 	}
 
@@ -100,6 +101,7 @@ func TestSearchChinese(t *testing.T) {
 	for _, d := range dict {
 		if !dat.ExactMatchSearch(d, 0) {
 			t.Errorf("%s not found", string(d))
+			return
 		}
 	}
 
