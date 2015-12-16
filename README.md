@@ -79,3 +79,7 @@ The project clones from the [go-darts](https://github.com/awsong/go-darts), but 
 	
 	    fmt.Printf("Test total %d english words\n", len(dict))
 	}
+
+#### License
+
+MIT License
